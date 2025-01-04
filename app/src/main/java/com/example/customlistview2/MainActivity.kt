@@ -8,7 +8,6 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var createStoreButton: Button
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

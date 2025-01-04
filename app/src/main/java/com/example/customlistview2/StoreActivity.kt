@@ -22,11 +22,13 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import java.util.Locale
 
 class StoreActivity : AppCompatActivity() {
 
     private lateinit var productName: EditText
     private lateinit var productPrice: EditText
+    private lateinit var productDescription: EditText
     private lateinit var productImage: ImageView
     private lateinit var addProductButton: Button
     private lateinit var toolbar: Toolbar
@@ -41,12 +43,12 @@ class StoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_store)
         productName = findViewById(R.id.productName)
         productPrice = findViewById(R.id.productPrice)
+        productDescription = findViewById(R.id.productDescription)
         productImage = findViewById(R.id.productImage)
         addProductButton = findViewById(R.id.addProductButton)
         productListView = findViewById(R.id.productListView)
         val adapter = ProductAdapter(this, productList)
         productListView.adapter = adapter
-
         addProductButton.setOnClickListener {
             addProduct(adapter)
         }
@@ -54,24 +56,31 @@ class StoreActivity : AppCompatActivity() {
         toolbar.title = "Добавление продукта"
         setSupportActionBar(toolbar)
         initActivityResultLauncher()
+        productListView.setOnItemClickListener { parent, view, position, id ->
+            val selectedProduct = productList[position]
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("PRODUCT", selectedProduct)
+            startActivity(intent)
+        }
     }
 
     private fun addProduct(adapter: ArrayAdapter<Product>) {
         val name = productName.text.toString()
         val price = productPrice.text.toString()
-
-        if (name.isNotEmpty() && price.isNotEmpty() && isImageSelected) {
-            val product = Product(name, price.toDouble(), selectedImageUri)
+        val description = productDescription.text.toString()
+        if (name.isNotEmpty() && price.isNotEmpty() && description.isNotEmpty() && isImageSelected) {
+            val product = Product(name, price.toDouble(), selectedImageUri, description)
             productList.add(product)
             adapter.notifyDataSetChanged()
             productName.text.clear()
             productPrice.text.clear()
+            productDescription.text.clear()
             productImage.setImageResource(R.drawable.ic_add_photo)
             isImageSelected = false
         } else {
             Toast.makeText(
                 this,
-                "Введите название, цену и выберите изображение",
+                "Введите все данные и выберите изображение",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -90,7 +99,7 @@ class StoreActivity : AppCompatActivity() {
             }
     }
 
-    fun selectImage(view: View) {
+    fun selectImage(@Suppress("UNUSED_PARAMETER")view: View) {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         activityResultLauncher.launch(intent)
     }
@@ -103,18 +112,17 @@ class StoreActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_exit -> {
-                finish()
+                finishAffinity()
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }
 
-data class Product(val name: String, val price: Double, val imageUri: Uri)
-
-class ProductAdapter(context: Context, private val dataSource: ArrayList<Product>) :
+class ProductAdapter(context: Context, dataSource: ArrayList<Product>) :
     ArrayAdapter<Product>(context, R.layout.list_item_product, dataSource) {
     private val inflater: LayoutInflater =
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -126,7 +134,7 @@ class ProductAdapter(context: Context, private val dataSource: ArrayList<Product
         val productImage = view.findViewById<ImageView>(R.id.productImageView)
         val product = getItem(position)
         productName.text = product?.name
-        productPrice.text = String.format("%.2f", product?.price)
+        productPrice.text = String.format(Locale.ROOT, "%.2f", product?.price)
         productImage.setImageURI(product?.imageUri)
         return view
     }

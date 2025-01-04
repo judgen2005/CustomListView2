@@ -10,6 +10,11 @@
           <theme>@style/Theme.CustomListView</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml">
+        <config>
+          <theme>@style/Theme.CustomListView2</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_store.xml">
         <config>
           <theme>@style/Theme.CustomListView</theme>
@@ -31,7 +36,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="534b8c22-fdba-4571-b673-d9ea8053f128" name="Changes" comment="Домашнее задание по теме &quot;CustomListView 2 часть&quot;" />
+    <list default="true" id="534b8c22-fdba-4571-b673-d9ea8053f128" name="Changes" comment="Домашнее задание по теме &quot;CustomListView 2 часть&quot; выполнено">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/customlistview2/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/customlistview2/ProductDetailActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/customlistview2/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/customlistview2/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/customlistview2/StoreActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/customlistview2/StoreActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_store.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,12 +81,12 @@
     &quot;assignee&quot;: &quot;judgen2005&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/judgen2005/CustomListView.git&quot;,
-    &quot;accountId&quot;: &quot;e8f80d03-7e1c-4f49-9352-294b5c5847da&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/judgen2005/CustomListView2.git",
+    "accountId": "e8f80d03-7e1c-4f49-9352-294b5c5847da"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -89,6 +105,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
@@ -99,7 +116,7 @@
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "vcs.Git",
-    "show.do.not.copy.http.proxy.settings.to.gradle": "true"
+    "show.do.not.copy.http.proxy.settings.to.gradle": "false"
   }
 }]]></component>
   <component name="PsdUISettings">
@@ -108,6 +125,9 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.-721422823">
+      <recent name="com.example.customlistview2" />
+    </key>
     <key name="android.template.805341476">
       <recent name="com.example.customlistview" />
     </key>
@@ -222,6 +242,7 @@
       <path value="$PROJECT_DIR$/CustomListView2" />
     </ignored-roots>
     <MESSAGE value="Домашнее задание по теме &quot;CustomListView 2 часть&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Домашнее задание по теме &quot;CustomListView 2 часть&quot;" />
+    <MESSAGE value="Домашнее задание по теме &quot;CustomListView 2 часть&quot; выполнено" />
+    <option name="LAST_COMMIT_MESSAGE" value="Домашнее задание по теме &quot;CustomListView 2 часть&quot; выполнено" />
   </component>
 </project>
