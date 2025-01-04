@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CustomListView2</string>
+    <string name="welcome_message">Магазин продуктов</string>
+    <string name="create_store_button">Создать магазин</string>
+    <string name="product_name_hint">Название продукта</string>
+    <string name="product_price_hint">Цена продукта</string>
+    <string name="add_product_button">Добавить</string>
+    <string name="exit_menu">Exit</string>
+</resources>
