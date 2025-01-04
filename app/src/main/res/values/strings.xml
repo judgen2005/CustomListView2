@@ -7,4 +7,5 @@
     <string name="add_product_button">Добавить</string>
     <string name="exit_menu">Exit</string>
     <string name="product_description_hint">Описание продукта</string>
+    <string name="product_price_view_detail">Цена: %1$s руб.</string>
 </resources>

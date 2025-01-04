@@ -56,7 +56,7 @@ class StoreActivity : AppCompatActivity() {
         toolbar.title = "Добавление продукта"
         setSupportActionBar(toolbar)
         initActivityResultLauncher()
-        productListView.setOnItemClickListener { parent, view, position, id ->
+        productListView.setOnItemClickListener { _, _, position, _ ->
             val selectedProduct = productList[position]
             val intent = Intent(this, ProductDetailActivity::class.java)
             intent.putExtra("PRODUCT", selectedProduct)

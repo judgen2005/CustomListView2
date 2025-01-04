@@ -1,6 +1,5 @@
 package com.example.customlistview2
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -18,7 +17,7 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var detailProductDescription: TextView
     private lateinit var toolbar: Toolbar
 
-    @SuppressLint("SetTextI18n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
@@ -36,7 +35,10 @@ class ProductDetailActivity : AppCompatActivity() {
             detailImageView.setImageURI(product.imageUri)
             detailProductName.text = product.name
             detailProductPrice.text =
-                "Цена: ${String.format(Locale.ROOT, "%.2f", product.price)} руб."
+                getString(
+                    R.string.product_price_view_detail,
+                    String.format(Locale.ROOT, "%.2f", product.price)
+                )
             detailProductDescription.text = product.description
         }
     }
